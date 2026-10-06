@@ -1,0 +1,44 @@
+{
+  "name": "euroscrape-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for the EuroScrape Actors on Apify Store: flight, hotel and electricity prices, second-hand marketplaces, company data and leads, EU and French open data, as tools for AI agents.",
+  "type": "module",
+  "bin": {
+    "euroscrape-mcp": "server.js"
+  },
+  "files": [
+    "server.js",
+    "tools.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "start": "node server.js",
+    "test": "node test/check.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.1"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "apify",
+    "web-scraping",
+    "flights",
+    "hotels",
+    "electricity-prices",
+    "company-data",
+    "leads",
+    "open-data"
+  ],
+  "license": "MIT",
+  "author": "EuroScrape",
+  "homepage": "https://github.com/EuroScrape/euroscrape-mcp",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EuroScrape/euroscrape-mcp.git"
+  }
+}
