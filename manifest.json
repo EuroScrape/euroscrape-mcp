@@ -2,7 +2,7 @@
   "manifest_version": "0.3",
   "name": "euroscrape-mcp",
   "display_name": "EuroScrape",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Twenty European data tools for AI agents: flight, hotel and electricity prices, second-hand marketplaces, company data and leads, EU and French open data.",
   "long_description": "Twenty European data tools for AI agents: flight, hotel and electricity prices, second-hand marketplaces, company data and leads, EU and French open data. Each tool runs one of the EuroScrape Actors on your own Apify account and returns structured JSON: you pay Apify per result, at the price stated in each tool description, with a spending cap on every call (0.50 USD by default). Apify's free plan includes 5 USD of usage per month.",
   "author": {
@@ -131,6 +131,9 @@
     "france"
   ],
   "license": "MIT",
+  "privacy_policies": [
+    "https://euroscrape.github.io/apify-actors/privacy.html"
+  ],
   "compatibility": {
     "platforms": [
       "darwin",

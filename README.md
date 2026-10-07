@@ -93,6 +93,10 @@ https://mcp.apify.com?tools=euroscrape/eu-electricity-prices,euroscrape/google-f
 
 This repository is the local alternative, with short tool names, cautious defaults and a spending cap.
 
+## Privacy Policy
+
+The server runs on your computer and EuroScrape collects nothing through it: no analytics, no telemetry. Tool arguments and your Apify API token go only to the Apify API, so that the Actor runs on your own Apify account; the server writes nothing to disk. Full policy: [euroscrape.github.io/apify-actors/privacy.html](https://euroscrape.github.io/apify-actors/privacy.html).
+
 ## Development
 
 ```bash

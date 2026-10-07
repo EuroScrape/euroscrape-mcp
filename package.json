@@ -1,6 +1,6 @@
 {
   "name": "euroscrape-mcp",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "MCP server for the EuroScrape Actors on Apify Store: flight, hotel and electricity prices, second-hand marketplaces, company data and leads, EU and French open data, as tools for AI agents.",
   "type": "module",
   "bin": {
