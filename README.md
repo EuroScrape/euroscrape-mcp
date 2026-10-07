@@ -10,9 +10,15 @@ Works with Claude Desktop, Claude Code, Cursor, VS Code and any MCP client.
 
 ## Install
 
-You need Node.js 18 or later and an Apify API token ([Apify Console → Settings → API & Integrations](https://console.apify.com/settings/integrations)). Apify's free plan includes 5 USD of usage per month.
+You need an Apify API token ([Apify Console → Settings → API & Integrations](https://console.apify.com/settings/integrations)). Apify's free plan includes 5 USD of usage per month.
 
-Add this to your MCP client configuration (for Claude Desktop: `claude_desktop_config.json`):
+### Claude Desktop, in one click
+
+Download [`euroscrape-mcp.mcpb`](https://github.com/EuroScrape/euroscrape-mcp/releases/latest/download/euroscrape-mcp.mcpb) and open it, or drag it into Settings → Extensions. Claude Desktop asks for your Apify API token and installs the server; nothing else to set up.
+
+### Any MCP client
+
+With Node.js 18 or later, add this to your MCP client configuration (for Claude Desktop: `claude_desktop_config.json`):
 
 ```json
 {

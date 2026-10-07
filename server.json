@@ -1,0 +1,39 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.EuroScrape/euroscrape-mcp",
+  "title": "EuroScrape",
+  "description": "European data tools for agents: flight, hotel, power prices, marketplaces, companies, open data.",
+  "version": "0.1.1",
+  "repository": {
+    "url": "https://github.com/EuroScrape/euroscrape-mcp",
+    "source": "github"
+  },
+  "websiteUrl": "https://euroscrape.github.io/apify-actors/",
+  "packages": [
+    {
+      "registryType": "mcpb",
+      "identifier": "https://github.com/EuroScrape/euroscrape-mcp/releases/download/v0.1.1/euroscrape-mcp.mcpb",
+      "version": "0.1.1",
+      "fileSha256": "cf102217412bdfb20382339a43a420c10e412b262c473a3131fb7b99b3a101c0",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "APIFY_TOKEN",
+          "description": "Your Apify API token: the tools run on your own Apify account.",
+          "isRequired": true,
+          "isSecret": true,
+          "format": "string"
+        },
+        {
+          "name": "EUROSCRAPE_MAX_USD_PER_CALL",
+          "description": "Spending cap of one call, in USD.",
+          "isRequired": false,
+          "default": "0.5",
+          "format": "string"
+        }
+      ]
+    }
+  ]
+}

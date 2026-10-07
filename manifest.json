@@ -1,0 +1,162 @@
+{
+  "manifest_version": "0.3",
+  "name": "euroscrape-mcp",
+  "display_name": "EuroScrape",
+  "version": "0.1.1",
+  "description": "Twenty European data tools for AI agents: flight, hotel and electricity prices, second-hand marketplaces, company data and leads, EU and French open data.",
+  "long_description": "Twenty European data tools for AI agents: flight, hotel and electricity prices, second-hand marketplaces, company data and leads, EU and French open data. Each tool runs one of the EuroScrape Actors on your own Apify account and returns structured JSON: you pay Apify per result, at the price stated in each tool description, with a spending cap on every call (0.50 USD by default). Apify's free plan includes 5 USD of usage per month.",
+  "author": {
+    "name": "EuroScrape",
+    "url": "https://apify.com/euroscrape"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/EuroScrape/euroscrape-mcp"
+  },
+  "homepage": "https://euroscrape.github.io/apify-actors/",
+  "documentation": "https://github.com/EuroScrape/euroscrape-mcp#readme",
+  "support": "https://github.com/EuroScrape/euroscrape-mcp/issues",
+  "icon": "icon.png",
+  "server": {
+    "type": "node",
+    "entry_point": "server.js",
+    "mcp_config": {
+      "command": "node",
+      "args": [
+        "${__dirname}/server.js"
+      ],
+      "env": {
+        "APIFY_TOKEN": "${user_config.apify_token}",
+        "EUROSCRAPE_MAX_USD_PER_CALL": "${user_config.max_usd_per_call}"
+      }
+    }
+  },
+  "tools": [
+    {
+      "name": "get_electricity_prices",
+      "description": "Day-ahead electricity prices for 40+ European bidding zones, hourly or 15-minute, with a summary per zone and day: cheapest window, minimum, maximum, average, negative-price hours. Without dates: today and tomorrow (tomorrow is published around 13:00 CET)."
+    },
+    {
+      "name": "search_flights",
+      "description": "Flight prices from Google Flights for a route and one or several departure dates: airlines, times, stops, price, and the typical price range of the route. Use numberOfDates with cheapestOnly to find the cheapest day to fly."
+    },
+    {
+      "name": "find_ryanair_fares",
+      "description": "Ryanair fares: the cheapest fare per day for a route (fare calendar), or every destination under a price cap from an airport."
+    },
+    {
+      "name": "search_hotels",
+      "description": "Hotel prices from Google Hotels for a destination or for named hotels and dates: price per night and total, rating, stars. With includeBookingSites, the price of each hotel on every booking site (official site, Booking.com, Expedia...)."
+    },
+    {
+      "name": "search_second_hand_europe",
+      "description": "One search on the biggest second-hand marketplace of up to 18 European countries (Kleinanzeigen, Marktplaats, Subito, Wallapop, OLX, Blocket, FINN...): listings with prices converted to euros, a deal score, and the median price per country."
+    },
+    {
+      "name": "search_vinted",
+      "description": "Vinted listings in up to 26 countries: price with buyer fees, brand, size, condition, seller rating, and a cross-country price summary."
+    },
+    {
+      "name": "search_kleinanzeigen",
+      "description": "Ads from Kleinanzeigen (Germany): price, location, posting time, and a 0-100 deal score against the market price."
+    },
+    {
+      "name": "find_new_companies_without_website",
+      "description": "Companies registered in the last days in the UK, France and five US states (Texas, New York, Colorado, Connecticut, Oregon) that have no website yet, from official registers, with the creation date of their domain name when one exists. Companies only, no director names."
+    },
+    {
+      "name": "search_uk_companies",
+      "description": "UK companies from Companies House by SIC code, town or incorporation date: profile, registered office, officers, and optionally website, emails and phones."
+    },
+    {
+      "name": "search_french_companies",
+      "description": "French companies from the official SIRENE register by activity (NAF code or keyword), department and size: legal data, headquarters, directors, and optionally a verified website with emails and phones."
+    },
+    {
+      "name": "validate_eu_vat_numbers",
+      "description": "Checks EU VAT numbers against VIES, the European Commission's registry: valid or not, registered name and address. With requesterVatNumber, each check returns an official consultation number."
+    },
+    {
+      "name": "get_company_behind_website",
+      "description": "Reads the legal notice or Impressum of European websites and returns the company behind each one: legal name and form, registry numbers, VAT ID, address, emails and phones."
+    },
+    {
+      "name": "detect_website_tech_stack",
+      "description": "Detects the technologies of websites (280+: CMS, e-commerce, analytics, consent tools...) with the company identity from the legal notice and sales signals."
+    },
+    {
+      "name": "search_eu_public_tenders",
+      "description": "Public tenders and contract awards in Europe (TED) and France (BOAMP, DECP) by keyword, CPV code and country: buyer, value in euros, deadline; for awards, the winner, the amount and the number of bids."
+    },
+    {
+      "name": "get_france_property_sales",
+      "description": "Real property sales in France (official DVF data) for a city or postal code: price paid, price per m2, surface, rooms, date, with the energy class of the home when known and a median price summary."
+    },
+    {
+      "name": "get_france_energy_ratings",
+      "description": "Energy performance certificates (DPE, ADEME open data) of homes in a French city or postal code: energy and CO2 class, surface, consumption, estimated yearly bill."
+    },
+    {
+      "name": "get_france_building_permits",
+      "description": "Building permits in a French city or department (official Sitadel register): project, dwellings, floor area, status, and the applicant company with its SIREN."
+    },
+    {
+      "name": "get_france_fuel_prices",
+      "description": "Live official fuel prices of the stations around a French city, postal code or GPS point, cheapest first, with the local spread."
+    },
+    {
+      "name": "get_app_reviews",
+      "description": "App Store and Google Play reviews of an app in the countries you choose: rating, text, version, date, developer reply, and a summary by version and country."
+    },
+    {
+      "name": "search_trusted_shops",
+      "description": "Online shops listed on Trusted Shops by keyword and country (company, contact, rating, review volume), or the latest customer reviews of a given shop."
+    },
+    {
+      "name": "get_run_results",
+      "description": "Fetches the results of a previous call that was still running when it returned. Free: no new run is started."
+    }
+  ],
+  "keywords": [
+    "apify",
+    "web scraping",
+    "flights",
+    "hotels",
+    "electricity prices",
+    "vinted",
+    "company data",
+    "leads",
+    "open data",
+    "europe",
+    "france"
+  ],
+  "license": "MIT",
+  "compatibility": {
+    "platforms": [
+      "darwin",
+      "win32",
+      "linux"
+    ],
+    "runtimes": {
+      "node": ">=18.0.0"
+    }
+  },
+  "user_config": {
+    "apify_token": {
+      "type": "string",
+      "title": "Apify API token",
+      "sensitive": true,
+      "required": true,
+      "description": "From Apify Console → Settings → API & Integrations. The tools run on your own Apify account."
+    },
+    "max_usd_per_call": {
+      "type": "number",
+      "title": "Spending cap per call (USD)",
+      "required": false,
+      "default": 0.5,
+      "min": 0.01,
+      "max": 50,
+      "description": "Apify stops a run when it has cost this much. Default: 0.50."
+    }
+  }
+}
